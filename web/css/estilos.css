@@ -1,0 +1,113 @@
+@import url(normalize.css);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url(menu.css);
+@import url(banner.css);
+@import url(blog.css);
+@import url(info.css);
+@import url(sesion.css);
+@import url(contacto.css);
+
+/* QUITAMOS MARGEN/PADDING0 TODO INTERNO DE LA CAJA BORDE BOX */
+* {
+    box-sizing: border-box;
+}
+
+/*google fonts fuentesita */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+/*ancho de 100 y alto de 50 */
+/*color rosado masomenos */
+/*color texto blanco */
+/* pixed para que se quede siempre */
+/*0 y 0  and index 100 siempre adelante*/
+header {
+    
+    width:100%;
+    height: 50px;
+    background-color: rgb(29, 217, 197);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 100;
+}
+
+
+/* contiene  */
+/* */
+.contenedor{
+    width: 98%;
+    margin: auto;   
+}
+
+h1{
+    float: left;
+    margin: 5px;
+}
+
+header .contenedor {
+    display: table;
+}
+
+section {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#bienvenidos{
+    text-align: center;
+    
+}
+
+footer .contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+
+
+.copy {
+    font-size: 20px;
+    
+}
+
+.sociales {
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+}
+
+.sociales a{
+    color: #333;
+    text-decoration: none;
+}
+
+.fondo-transparente{
+    background: rgba(32, 33, 33, 0.4);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.a-heredar{
+    color: inherit;
+    text-decoration: inherit;
+    
+}
+.a-heredar:hover{
+    color: inherit;
+}
+
+.tamaño-logo{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+@media (min-width:1024px){
+    .contenedor{
+        width: 1001px;
+    }
+}
+

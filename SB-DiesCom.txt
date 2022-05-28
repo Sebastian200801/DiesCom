@@ -1,0 +1,69 @@
+CREATE DATABASE diescom;
+
+USE diescom;
+
+CREATE TABLE personas(
+idPe CHAR(5) PRIMARY KEY,
+nombres CHAR(30) NOT NULL,
+apellidos CHAR(30) NOT NULL,
+email CHAR(100) NOT NULL,
+pas CHAR(30) NOT NULL,
+edad INT(3) NOT NULL
+);
+
+CREATE TABLE usuarios(
+idUs CHAR(5) PRIMARY KEY,
+idPe CHAR(5) NOT NULL,
+direccion CHAR(100) NOT NULL,
+ntarjeta INT(16),
+CONSTRAINT fk_idPe1 FOREIGN KEY (idPe) 
+REFERENCES personas(idPe)
+);
+
+CREATE TABLE empleados(
+idEm CHAR(5) PRIMARY KEY,
+idPe CHAR(5) NOT NULL,
+dni INT(8) NOT NULL,
+sueldo FLOAT(30) NOT NULL,
+CONSTRAINT fk_idPe2 FOREIGN KEY (idPe) 
+REFERENCES personas(idPe)
+);
+
+CREATE TABLE admin(
+idAd CHAR(5) PRIMARY KEY,
+idEm CHAR(5) NOT NULL,
+CONSTRAINT fk_idEm1 FOREIGN KEY (idEm) 
+REFERENCES empleados(idEm)
+);
+
+CREATE TABLE solicitud(
+idSo CHAR(5) PRIMARY KEY,
+idPe CHAR(5) NOT NULL,
+motivo CHAR(50) NOT NULL,
+descripcion CHAR(255) NOT NULL,
+estado CHAR(20) NOT NULL,
+idEm CHAR(5),
+solucion CHAR(255),
+calificacion INT(2),
+CONSTRAINT fk_idPe3 FOREIGN KEY (idPe) 
+REFERENCES personas(idPe),
+CONSTRAINT fk_idEm2 FOREIGN KEY (idEm) 
+REFERENCES empleados(idEm)
+);
+
+INSERT INTO personas VALUES ('PE001','Juan','Perez','juan@gmail.com','123',25);
+INSERT INTO personas VALUES ('PE002','Mariano','Rodriguez','mariano@gmail.com','123',24);
+INSERT INTO personas VALUES ('PE003','Maria','Flores','maria@gmail.com','345',23);
+INSERT INTO personas VALUES ('PE004','Ana','Suarez','ana@gmail.com','345',23);
+INSERT INTO personas VALUES ('PE005','Sofia','Escalante','sofia@gmail.com','345',23);
+
+INSERT INTO usuarios VALUES ('US001','PE004','Av. grau',290345671283);
+INSERT INTO usuarios VALUES ('US002','PE005','calle Maria Escobar',263719203478);
+
+INSERT INTO empleados VALUES ('EM001','PE002',32904718,1000);
+INSERT INTO empleados VALUES ('EM002','PE003',72903510,500);
+INSERT INTO empleados VALUES ('EM003','PE001',72903510,500);
+
+INSERT INTO admin VALUES ('AD001','EM001');
+
+INSERT INTO solicitud(idSo,idPe,motivo,descripcion,estado) VALUES('SO001','PE005','Problema con el Software','Tuve problemas con la instalacion del programa ******','PENDIENTE');

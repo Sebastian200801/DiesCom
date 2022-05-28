@@ -1,0 +1,42 @@
+
+
+#contacto{
+    background-image: url("../Imagenes/img-contacto.jpg");
+    background-size: 110vw 110vh;
+    color: white;
+    margin-top:50px;
+}
+
+.form-contacto{
+    width: 450px;
+    background: rgba(0, 0, 0, 0.4);
+    margin-top: 80px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form-text{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size:17px;
+    border: none;
+}
+
+.form-text2{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+#boton:hover{
+    cursor:pointer;
+}
+
+@media(max-width:480px){
+    form{
+        width:100%;
+    }
+}

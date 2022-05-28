@@ -1,0 +1,46 @@
+#infe {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px; 
+}
+
+#infe .contenedor {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+
+#infe img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid #1C1C1C;
+    margin: 20px;  
+    
+}
+
+#infe a{
+    display : block;
+    width: 100px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 7px;
+    margin-top:10px;
+    border: 3px solid #fff;
+    transform: translateX(92%);
+    
+    
+}
+
+#infe a:hover {
+    
+    background: rgba(0,0,0,0.5);
+}
+
+
+
+
+
